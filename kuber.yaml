@@ -1,4 +1,4 @@
-apiVersion: argoprooj.io/v1alpha1
+apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: kuber
@@ -8,9 +8,9 @@ metadata:
 spec:
   project: development
   source:
-    repoURL: https://github.com/bakavets/k8s-lessons.git
-    targetRevision: master
-    path: lesson-30/dev/kuber
+    repoURL: https://github.com/iailyas/argocd
+    targetRevision: main
+    path: argo
   destination:
     server: https://kubernetes.default.svc
     namespace: kuber
