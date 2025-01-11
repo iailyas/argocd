@@ -1,0 +1,5 @@
+FROM grafana/grafana:latest
+
+RUN mkdir -p /var/lib/grafana/plugins/alexanderzobnin-zabbix-app
+
+COPY ./alexanderzobnin-zabbix-app /var/lib/grafana/plugins/alexanderzobnin-zabbix-app

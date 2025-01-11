@@ -1,0 +1,7 @@
+iptables -t nat -A PREROUTING -i eth0 -p tcp -d 138.68.110.12 --dport 80 -j DNAT --to-destination 10.7.0.2:8080
+
+# Allow forwarding of the traffic to the client
+iptables -A FORWARD -p tcp -d 10.7.0.2 --dport 8080 -j ACCEPT
+
+# Enable NAT for outgoing traffic from the client
+iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
